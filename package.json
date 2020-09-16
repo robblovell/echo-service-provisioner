@@ -1,0 +1,40 @@
+{
+  "name": "echo-server-provisioner",
+  "version": "1.0.0",
+  "description": "A CodeZero cloud deployer for echo-server",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "codezero",
+    "cloud-provisioner"
+  ],
+  "author": "CodeZero",
+  "license": "ISC",
+  "files": [
+    "lib",
+    "k8s"
+  ],
+  "dependencies": {
+    "@c6o/kubeclient": "^0.0.6",
+    "@provisioner/common": "^0.0.7",
+    "form-data": "^3.0.0",
+    "lit-element": "^2.4.0",
+    "mixwith": "^0.1.1"
+  },
+  "devDependencies": {
+    "@babel/parser": "^7.11.5",
+    "@babel/types": "^7.11.5",
+    "@types/node": "^10.12.18",
+    "jest": "^26.4.2",
+    "parcel": "^1.12.4",
+    "parcel-bundler": "^1.12.4",
+    "source-map-support": "^0.5.16",
+    "tslib": "^2.0.1",
+    "typescript": "^3.9.5"
+  },
+  "engines": {
+    "node": ">=12.18.3"
+  }
+}

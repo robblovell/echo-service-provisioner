@@ -1,0 +1,27 @@
+apiapplicationVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: {{namespace}}
+  name: {{applicationName}}
+  labels:
+    name: {{applicationName}}
+    type: learning
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: {{applicationName}}
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        name: {{applicationName}}
+    spec:
+      containers:
+        - image: {{dockerRepository}}/{{applicationName}}:{{applicationVersion}}
+          name: {{applicationName}}
+          imagePullPolicy: Always
+          resources: {}
+          ports:
+            - containerPort: 8080
+status: {}
