@@ -1,6 +1,6 @@
 {
   "name": "echo-server-provisioner",
-  "version": "1.0.3",
+  "version": "1.0.2",
   "description": "A CodeZero cloud deployer for echo-server",
   "main": "lib/index.js",
   "scripts": {
