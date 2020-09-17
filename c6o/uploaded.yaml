@@ -2,7 +2,7 @@ routes:
   - type: http
     targetService: echo-server
 provisioner:
-  package: "@provisioner/echo-server-provisioner"
+  package: "echo-server-provisioner"
   ui: ignore
 marina:
   launch:

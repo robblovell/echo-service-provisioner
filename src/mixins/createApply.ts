@@ -1,5 +1,5 @@
 import { baseProvisionerType } from '..'
-import { config } from "../config";
+import { config } from "../config"
 
 export const createApplyMixin = (base: baseProvisionerType) => class extends base {
 
@@ -22,15 +22,14 @@ export const createApplyMixin = (base: baseProvisionerType) => class extends bas
     }
 
     async ensureIsInstalled() {
-        config['serviceNamespace'] = this.serviceNamespace
-        await config.kubernetes.forEach(
-            async (crdFile: string) => {
-                await this.manager.cluster
-                    .begin('Install ' + this.applicationName + ' service')
-                    .addOwner(this.manager.document)
-                    .upsertFile(crdFile, config)
-                    .end()
-            })
+        config['namespace'] = this.serviceNamespace
+        for (const crdFile of config.kubernetes) {
+            await this.manager.cluster
+                .begin(`Install ${String(config?.applicationName)} CRD: ${String(crdFile)} (kind: ${String(this.manager?.document?.kind)})`)
+                .addOwner(this.manager.document)
+                .upsertFile(crdFile, config)
+                .end()
+        }
     }
 
     async ensureIsRunning() {

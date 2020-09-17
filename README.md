@@ -171,3 +171,5 @@ at Object.exports.<computed> (/usr/traxitt/server/lib/services/clusters/iaas.js:
 #### Debugging provisioning
 
 node --inspect-brk ../node-monorepo/packages/tools/cli/lib/index.js provision ./c6o/application.yaml --local -n myspace7
+
+node --inspect-brk packages/tools/cli/lib/index.js install echo-server --local --package /Users/robblovell/Code/work/codezero/echo-server-provisioner
